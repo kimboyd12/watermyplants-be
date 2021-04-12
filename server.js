@@ -7,7 +7,7 @@ const session = require("express-session")
 
 // const usersRouter = require("./users/users-router")
 // const plantsRouter = require("./plants/plants-router")
-// const welcomeRouter = require("./welcome-router")
+const welcomeRouter = require("./welcome-router")
 
 const server = express()
 
@@ -20,7 +20,7 @@ server.use(session({
     secret: process.env.JWT_SECRET,
 }))
 
-// server.use("/", welcomeRouter)
+server.use("/", welcomeRouter)
 // server.use("/users", usersRouter)
 // server.use("/plants", plantsRouter)
 
