@@ -1,6 +1,7 @@
 const express = require("express")
 const Plants = require("./plants-model")
 const restrict = require("../plants/plants-middleware")
+const Users = require("../users/users-model")
 
 const router = express.Router()
 
@@ -26,7 +27,6 @@ router.get("/:id/plantsList", restrict(), async (req, res, next) => {
             next(err)
         })
 })
-
 
 // add plant to user
 router.post("/addPlant/:id", restrict(), (req, res, next) => {

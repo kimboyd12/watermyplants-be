@@ -32,10 +32,11 @@ function findById(id) {
 }
 
 // get plants by user ID
-function getPlantsList(userID) {
+function getPlantsList(id) {
     return db('plants')
-        .join('users', 'users.id', '=', 'user_id')
+        .join('users', 'users.id', 'plants.user_id')
         .select('plants.id as plantID', 'plants.nickname as Nickname', 'plants.species as Species', 'plants.h2oFrequency as h2oFrequency')
+		.where({user_id: id})
         .orderBy('plants.id')
 }
 

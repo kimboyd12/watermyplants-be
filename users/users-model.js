@@ -20,8 +20,8 @@ function findBy(filter) {
 function findUserById(id) {
     return db("users")
     .select("id", "username")
-    .where({id})
-    .first()
+    .where({ id })
+    .first();
 }
 
 function updateUser(changes, id) {
